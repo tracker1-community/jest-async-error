@@ -1,0 +1,17 @@
+/build/**
+/node_modules/**
+/coverage/**
+/docs/**
+/jsdoc/**
+/templates/**
+/tests/bench/**
+/tests/fixtures/**
+/tests/performance/**
+/tmp/**
+/_server/wwwroot/**
+/flow-typed/**
+test.js
+!.eslintrc.js
+/dist/**
+/ui/**
+/api-node/**
