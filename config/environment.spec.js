@@ -8,12 +8,26 @@ const defaultPassCheckUrl = 'https://api.pwnedpasswords.com/range/';
 
 describe('config/base', () => {
   beforeEach(_ => {
-    process.env = { ...originalEnv };
+    process.env = {
+      ...originalEnv,
+      RBI_SECRET: undefined,
+      RBI_DB_PATH: undefined,
+      RBI_PASSCHECK_URL: undefined,
+      RBI_KEY_PVT: undefined,
+      RBI_KEY_PUB: undefined,
+      RBI_KEY_PATH_PVT: undefined,
+      RBI_KEY_PATH_PUB: undefined,
+      RBI_KEY_PVT_SECRET: undefined,
+    };
+  });
+
+  afterAll(_ => {
+    process.env = originalEnv;
   });
 
   it('returns defaults', () => {
     // arrange
-    process.env = {};
+    // nothing to do
 
     // act
     const result = getConfig();
