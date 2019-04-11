@@ -19,7 +19,7 @@ describe('config/base', () => {
     const result = getConfig();
 
     // assert
-    return expect(result).toEqual({
+    expect(result).toEqual({
       data: defaultDataPath,
       secret: defaultSecret,
       dbPath: path.join(defaultDataPath, 'ingressum.db'),
