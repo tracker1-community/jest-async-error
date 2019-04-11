@@ -21,7 +21,7 @@ describe('config/base', () => {
     };
   });
 
-  afterAll(_ => {
+  afterAll(() => {
     process.env = originalEnv;
   });
 
