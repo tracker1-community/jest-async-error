@@ -1,17 +1,6 @@
 import os from 'os';
 import path from 'path';
 
-const {
-  RBI_SECRET,
-  RBI_DB_PATH,
-  RBI_PASSCHECK_URL,
-  RBI_KEY_PVT,
-  RBI_KEY_PUB,
-  RBI_KEY_PATH_PVT,
-  RBI_KEY_PATH_PUB,
-  RBI_KEY_PVT_SECRET,
-} = process.env;
-
 export const getDefaultDataPath = useOS => {
   switch (useOS || os.platform()) {
     case 'win32':
@@ -42,6 +31,17 @@ export const getConfig = (input = {}) => {
    * `RBI_KEY_PUB` or `RBI_KEY_PATH_PUB` - PEM format
    * `RBI_KEY_PVT_SECRET` secret for pvt key, fallback to `RBI_SECRET` or default
    */
+
+  const {
+    RBI_SECRET,
+    RBI_DB_PATH,
+    RBI_PASSCHECK_URL,
+    RBI_KEY_PVT,
+    RBI_KEY_PUB,
+    RBI_KEY_PATH_PVT,
+    RBI_KEY_PATH_PUB,
+    RBI_KEY_PVT_SECRET,
+  } = process.env;
 
   const dataPath = getDefaultDataPath();
   const config = Object.assign(
